@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Páginas{% endblock %}
+{% block content %}
+{% include 'pages/includes/pages_menu.html' %}
+<main role="main">
+  <div class="container mb-4">
+    {% for page in page_list|dictsort:"id" reversed %} {% comment %} o podemos usar el object_list {% endcomment %}
+     <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content mbtm">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5 forced">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-lower">{{page.title}}</span>
+                </h2>
+                <div class="section-content">
+                  <p>{{page.content|safe|striptags|truncatechars:"200"}}</p>
+                    {% comment %} <p><a href="{% url 'admin:pages_page_change' page.id %}">Editar</a></p> {% endcomment %}
+                    <p><a href="{% url 'pages:page' page.id page.title|slugify %}">Leer más</a>
+                    {% if request.user.is_staff %} 
+                      | <a href="{% url 'pages:update' page.id %}">Editar</a>
+                      |  <a href="{% url 'pages:delete' page.id %}">Borrar</a>
+                      {% endif %}
+                  </p>
+                  {% comment %} {% endif %} {% endcomment %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

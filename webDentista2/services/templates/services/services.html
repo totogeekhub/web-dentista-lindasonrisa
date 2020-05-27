@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Servicios{% endblock %}
+
+{% block content %}
+  {% for service in services reversed %}
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex mr-auto rounded" style="background-color:#4477EA;">
+              <h2 class="section-heading mb-0" >
+                <span class="section-heading-upper" style="color:white;">{{service.subtitle}}</span>
+                <span class="section-heading-lower" style="color:white;">{{service.title}}</span>
+              </h2>
+            </div>
+          </div>
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{service.image.url}}" alt="">
+          <div class="product-item-description d-flex ml-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">{{service.content}}</p>
+              <p class="mb-0 mbt">
+                <span class="section-heading-under">Precio = $<em><b>{{service.price}} .-</b></em>
+                  <!--<em><a href="#" class="link">General</a>, <a href="#" class="link">Ofertas</a></em>-->
+                  <em>
+                  {% for category in post.categories.all %}
+                    <a href="{% url 'category' category.id %}" class="link">{{category.name}}</a>{% if not forloop.last %},{% endif %}
+                  {% endfor %}
+                  </em>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+{% endblock %}

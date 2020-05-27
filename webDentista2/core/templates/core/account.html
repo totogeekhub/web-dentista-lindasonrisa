@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Mi Cuenta{% endblock %}
+
+{% block content %}
+<!--<style>body {background: url('core\static\core\img\clinica_dental.jpg') !important;}</style>-->   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" style="color:#4477EA;" href="{% url 'home' %}"><b>Cuenta</b></a>
+          <button class="navbar-toggler" type="button" style="background-color:blue;" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="background-color:blue;"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+                <a class="nav-link" style="color:#4477EA;" href="{% url 'home' %}"><b>Reservas de hora</b><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item {% if request.path == '/about/' %}active{% endif %}">
+                <a class="nav-link" style="color:#4477EA;" href="{% url 'about' %}"><b>Documentacion</b></a>
+              </li>
+              <li class="nav-item {% if request.path == '/about/' %}active{% endif %}">
+                <a class="nav-link" style="color:#4477EA;" href="{% url 'about' %}"><b>Recetas</b></a>
+              </li>
+              <li class="nav-item {% if request.path == '/about/' %}active{% endif %}">
+                <a class="nav-link" style="color:#4477EA;" href="{% url 'about' %}"><b>Cambiar Datos</b></a>
+              </li>
+            </ul>
+          </div>
+    </nav>
+{% endblock %}

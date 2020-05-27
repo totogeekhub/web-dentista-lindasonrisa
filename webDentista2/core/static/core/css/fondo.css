@@ -1,0 +1,7 @@
+body {
+    font-family: 'Lora';
+    background: linear-gradient(rgba(47, 80, 102, 0), rgba(37, 103, 134, 0)), url("../img/contact_dentista.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }     

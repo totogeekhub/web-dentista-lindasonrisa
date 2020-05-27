@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<!--<style>body {background: url('/core/img/clinica_dental.jpg') !important;}</style>-->
+<!-- Cabecera -->
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'core/img/mujer-feliz.jpg' %}" alt="">
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper">Lider en tratamientos dentales</span>
+          <span class="section-heading-lower">No te arrepentirás</span>
+        </h2>
+        <p class="mb-3">Trabajamos con los mejores materiales, nuestros profesionales son calificados,
+           lo que significa que todos nuestros trabajos están garantizados.
+        </p>
+        <div class="intro-button mx-auto" >
+          <a class="btn btn-primary btn-xl" style="background-color:#4477EA;" href="store">Visítanos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mensaje -->
+<section class="page-section cta" style="background-color:#4477EA;">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">Compromiso total</span>
+            <span class="section-heading-lower">Garantizado</span>
+          </h2>
+          <p class="mb-0">Nuestro compromiso es brindar servicios de la más alta calidad, nuestros clientes nos prefieren porque cuando entran a la consulta se sienten bien atendidos y seguros de que encontraran lo que necesitan, a muy buen precio. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
